@@ -8,7 +8,7 @@ export default function Footer() {
           <p className="text-xs  font-inter">
             ©️ 2024
             <span className="text-2xl font-syne font-bold"> Menteor </span>:from
-            the house of {" "}
+            the house of{" "}
             <Link
               target="_blank"
               rel="noopener noreferrer"
@@ -19,7 +19,7 @@ export default function Footer() {
             </Link>
           </p>
         </div>
-        <div className="flex w-full gap-4 justify-center sm:justify-end">
+        <div className="flex w-full gap-4 justify-center items-end sm:justify-end">
           <Link
             target="_blank"
             rel="noopener noreferrer"
@@ -30,25 +30,25 @@ export default function Footer() {
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"
-              width="auto"
+              width="20"
               height="20"
               viewBox="0,0,256,256"
               className="hover:scale-105 hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
             >
               <g
                 fill="#f8f9ff"
-                fill-rule="nonzero"
+                fillRule="nonzero"
                 stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeMiterlimit="10"
+                strokeDasharray=""
+                strokeDashoffset="0"
+                fontFamily="none"
+                fontWeight="none"
+                fontSize="none"
+                textAnchor="none"
                 style={{ mixBlendMode: "normal" }}
               >
                 <g transform="scale(5.12,5.12)">
@@ -67,25 +67,25 @@ export default function Footer() {
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"
-              width="auto"
+              width="20"
               height="20"
               viewBox="0,0,256,256"
               className="hover:scale-105 hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
             >
               <g
                 fill="#f8f9ff"
-                fill-rule="nonzero"
+                fillRule="nonzero"
                 stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeMiterlimit="10"
+                strokeDasharray=""
+                strokeDashoffset="0"
+                fontFamily="none"
+                fontWeight="none"
+                fontSize="none"
+                textAnchor="none"
                 style={{ mixBlendMode: "normal" }}
               >
                 <g transform="scale(5.12,5.12)">
@@ -104,25 +104,25 @@ export default function Footer() {
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"
-              width="auto"
+              width="20"
               height="20"
               viewBox="0,0,256,256"
               className="hover:scale-105 hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
             >
               <g
                 fill="#f8f9ff"
-                fill-rule="nonzero"
+                fillRule="nonzero"
                 stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeMiterlimit="10"
+                strokeDasharray=""
+                strokeDashoffset="0"
+                fontFamily="none"
+                fontWeight="none"
+                fontSize="none"
+                textAnchor="none"
                 style={{ mixBlendMode: "normal" }}
               >
                 <g transform="scale(5.12,5.12)">
@@ -141,25 +141,25 @@ export default function Footer() {
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
               y="0px"
-              width="auto"
-              height="20"
+              width="25"
+              height="25"
               viewBox="0,0,256,256"
               className="hover:scale-105 hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
             >
               <g
                 fill="#f8f9ff"
-                fill-rule="nonzero"
+                fillRule="nonzero"
                 stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeMiterlimit="10"
+                strokeDasharray=""
+                strokeDashoffset="0"
+                fontFamily="none"
+                fontWeight="none"
+                fontSize="none"
+                textAnchor="none"
                 style={{ mixBlendMode: "normal" }}
               >
                 <g transform="scale(5.12,5.12)">

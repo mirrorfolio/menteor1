@@ -21,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+       data-te-perfect-scrollbar-init
+       data-te-suppress-scroll-x="true"
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.variable,
