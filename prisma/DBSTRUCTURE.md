@@ -3,186 +3,116 @@
 
 A brief explanation on the Menteor database structure. The design includes various collections representing different entities in the system on 1/24/24.
 
+<a href="https://app.eraser.io/workspace/Mr4y47HaLlB8BbUhuOJa?elements=7lQVx0oWa4V577daVakIkA">View on Eraser<br /><img src="https://app.eraser.io/workspace/Mr4y47HaLlB8BbUhuOJa/preview?elements=7lQVx0oWa4V577daVakIkA&type=embed" /></a>
 
-<img src="https://app.eraser.io/workspace/lnVcci2pHvn8LGCvo8s7/preview?elements=kp0XDuaR9hqI-_UKNFYZ-Q&type=embed" />
+### 1. Users Collection:
 
-### Collections:
+The Users collection stores information about individuals using the Menteor platform. It includes details such as name, location, email, engagement type, and references the Discovery Methods collection for the discovery method used.
 
-#### 1. users
-The "users" collection serves as the central entity, capturing general information about users and their roles. It includes foreign key references to specific roles such as mentors, mentees, and enthusiasts.
+**Fields:**
 ```json
-
-[
-
-{ "_id": "objectId"},
-
-{ "mentorId": "mentor._id" },
-
-{ "menteeId": "mentee._id" },
-
-{ "enthusiastId": "enthusiast._id" },
-
-{ "name": "string" },
-
-{ "location": "string" },
-
-{ "email": "string" }
-
-]`
-
+{
+  "id": "user_001",
+  "name": "Alice Johnson",
+  "location": "San Francisco, CA",
+  "email": "alice@example.com",
+  "engagementTypeId": "signup",
+  "discoveryMethodId": "method_001"
+}
 ```
 
-#### 2. mentors
-The "mentors" collection stores details about individuals offering mentorship, including their expertise, years of experience, and preferences. It establishes relationships with expertise areas, platform features, and discovery methods.
+### 2. User Roles Collection:
 
+The User Roles collection defines various roles that users can have in the Menteor platform. It includes information about the type of role and references the Discovery Methods collection for the associated discovery method.
+
+**Fields:**
 ```json
-
-[
-
-{ "_id": "objectId"},
-
-{ "expertiseId": "expertiseArea._id" },
-
-{ "yearsOfExperience": "string" },
-
-{ "availability": "string" },
-
-{ "mentoringGoals": "string" },
-
-{ "platformFeatures": "array"},
-
-{ "challengesFaced": "string" },
-
-{ "interestingAspects": "string" },
-
-{ "improvementSuggestions": "string" },
-
-{ "discoveryMethodId": "discoveryMethod._id" }
-
-]`
-
+{
+  "id": "role_001",
+  "type": "Mentor",
+  "discoveryMethodId": "method_001"
+}
 ```
 
-#### 3. mentees
-The "mentees" collection contains information about individuals seeking mentorship. It includes details on their interests, skill levels, preferred time commitments, and reasons for seeking mentorship. Similar to mentors, it references various entities like interest areas, mentorship budgets, platform features, and discovery methods.
+### 3. Discovery Methods Collection:
 
+The Discovery Methods collection lists different methods through which users discover the Menteor platform. It provides a description of each method.
 
-
+**Fields:**
 ```json
-
-[
-
-{ "_id": "objectId" },
-
-{ "interestId": "interestArea._id" },
-
-{ "skillLevel": "string" },
-
-{ "topicOfInterest": "string" },
-
-{ "weeklyTimeCommitment": "string" },
-
-{ "mentorshipBudgetId": "mentorshipBudget._id" },
-
-{ "preferredTime": "string" },
-
-{ "mentorshipReason": "string" },
-
-{ "platformFeatures": "array" },
-
-{ "challengesFaced": "string" },
-
-{ "preferredMentorPersona": "string" },
-
-{ "discoveryMethodId": "discoveryMethod._id" }
-
-]
-
+{
+  "id": "method_001",
+  "method": "Referral"
+}
 ```
 
+### 4. Mentees Collection:
 
-#### 4. enthusiasts
-The "enthusiasts" collection focuses on individuals who are enthusiasts but may not be directly involved in mentorship. It captures their interests, platform features preferences, and discovery methods.
+The Mentees collection contains information about individuals seeking mentorship. It includes details such as topics of interest, preferred features, communication preferences, and reasons for seeking mentorship.
 
-
+**Fields:**
 ```json
-
-[
-
-{ "_id": "objectId" },
-
-{ "platformFeatures": "array" },
-
-{ "interestingAspects": "string" },
-
-{ "discoveryMethodId": "discoveryMethod._id" }
-
-]
-
+{
+  "id": "mentee_001",
+  "userId": "user_001",
+  "topicOrSkill": ["Programming", "Data Science"],
+  "preferredFeatures": ["Flexible Schedule", "Project Collaboration"],
+  "preferredCommunication": "Video Call",
+  "weeklyTimeCommitment": "8 hours",
+  "budget": "$50",
+  "preferredTime": "Evenings",
+  "mentorshipReason": ["Skill Enhancement", "Career Growth"],
+  "challengesFaced": ["Time Management", "Impostor Syndrome"],
+  "idealMentorDescription": "Seeking a mentor with expertise in data science and project collaboration."
+}
 ```
 
-  
-#### 5. expertiseAreas and 6. interestAreas
-These collections define the expertise and interest areas respectively, providing a structured way to categorize and match mentors and mentees.
+### 5. Mentors Collection:
 
+The Mentors collection stores information about individuals offering mentorship. It includes details such as mentoring goals, communication preferences, expertise areas, and availability for mentorship.
 
-
+**Fields:**
 ```json
-
-[{ "_id": "objectId" }, { "name": "string" }]
-
+{
+  "id": "mentor_001",
+  "userId": "user_001",
+  "mentoringGoals": ["Guidance on Leadership", "Technical Skill Development"],
+  "preferredCommunication": "Email",
+  "preferredFeatures": ["Flexible Schedule"],
+  "preferredTime": "Weekends",
+  "challengesFaced": ["Balancing Work and Personal Life"],
+  "interestInMenteor": ["Giving Back", "Professional Development"],
+  "improvementSuggestions": ["Enhance Platform UI", "Increase Mentor Matching Accuracy"],
+  "expertiseArea": ["Software Engineering", "Project Management"],
+  "experienceYears": "10",
+  "weeklyAvailability": "15 hours",
+  "chargePerSession": "$100"
+}
 ```
 
+### 6. Contributors Collection:
 
-#### 7. mentorshipBudgets
-The "mentorshipBudgets" collection represents different budget levels mentees may allocate for mentorship.
+The Contributors collection contains information about individuals willing to contribute to the Menteor platform. It includes preferences for contribution, openness to mentorship, and details about challenges and improvement suggestions.
 
+**Fields:**
 ```json
-
-[
-
-{ "_id": "objectId"},
-
-{ "amount": "string" }
-
-]`
-
-```
-
-
-#### 8. discoveryMethods
-The "discoveryMethods" collection holds various methods through which users discovered the platform or were discovered by others.
-
-
-```json
-
-[
-
-{ "_id": "objectId"},
-
-{ "method": "string" }
-
-]
+{
+  "id": "contributor_001",
+  "userId": "user_001",
+  "contributionPreferences": ["Content Creation", "Event Organization"],
+  "openToMentorship": true,
+  "preferredFeatures": ["Collaborative Projects"],
+  "challengesFaced": ["Limited Time for Contribution"],
+  "compellingAspects": ["Diverse Community", "Impactful Projects"],
+  "improvementSuggestions": ["Enhance Collaboration Tools", "Increase Outreach"]
+}
 ```
 
 ### Relationships:
 
-  
-
-1.  `users.mentorId <> mentors._id`
-
-2.  `users.menteeId <> mentees._id`
-
-3.  `users.enthusiastId <> enthusiasts._id`
-
-4.  `mentors.expertiseId > expertiseAreas._id`
-
-5.  `mentees.interestId > interestAreas._id`
-
-6.  `mentees.mentorshipBudgetId > mentorshipBudgets._id`
-
-7.  `enthusiasts.discoveryMethodId > discoveryMethods._id`
-
-8.  `mentees.discoveryMethodId > discoveryMethods._id`
-
-9.  `mentors.discoveryMethodId > discoveryMethods._id`
+- **users.engagementType <> user_roles.id**
+- **users.discoveryMethod <> discovery_methods.id**
+- **mentees.userId > users.id**
+- **mentors.userId > users.id**
+- **contributors.userId > users.id**
+- **user_roles.discoveryMethodId > discovery_methods.id**

@@ -33,7 +33,7 @@ export default function Footer() {
               width="20"
               height="20"
               viewBox="0,0,256,256"
-              className="hover:scale-105 hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
+              className="hover:scale-105 transition-all duration-700 ease-in-out hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
             >
               <g
                 fill="#f8f9ff"
@@ -70,7 +70,7 @@ export default function Footer() {
               width="20"
               height="20"
               viewBox="0,0,256,256"
-              className="hover:scale-105 hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
+              className="hover:scale-105 transition-all duration-700 ease-in-out hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
             >
               <g
                 fill="#f8f9ff"
@@ -107,7 +107,7 @@ export default function Footer() {
               width="20"
               height="20"
               viewBox="0,0,256,256"
-              className="hover:scale-105 hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
+              className="hover:scale-105 transition-all duration-700 ease-in-out hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
             >
               <g
                 fill="#f8f9ff"
@@ -144,7 +144,7 @@ export default function Footer() {
               width="25"
               height="25"
               viewBox="0,0,256,256"
-              className="hover:scale-105 hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
+              className="hover:scale-105 transition-all duration-700 ease-in-out hover:backdrop-blur-sm hover:bg-current/30 rounded-sm"
             >
               <g
                 fill="#f8f9ff"
