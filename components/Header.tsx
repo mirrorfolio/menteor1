@@ -20,7 +20,7 @@ export default function Header() {
 
         <Button
           variant="default"
-          className=" bg-[#009379] font-syne rounded-xl hover:bg-[#199D87] hover:scale-105  hover:backdrop-blur-sm"
+          className=" bg-[#009379] font-syne rounded-xl hover:bg-[#199D87] hover:scale-105 transition-all duration-700 ease-in-out  hover:backdrop-blur-sm"
         >
           Join Our Waiting List
         </Button>
