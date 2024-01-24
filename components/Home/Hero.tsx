@@ -11,14 +11,14 @@ export default function Hero() {
           <div className="pt-5 flex flex-col gap-4">
             <h1 className="text-4xl font-bold font-syne lg:w-3/4">
               🎯 <br />
-              Elevate Your Journey  with Expert Mentorship
+              Elevate Your Journey with Expert Mentorship
             </h1>
             <p className="text-md font-inter md:w-3/4">
               Welcome to Menteor, An all-in-one exclusive platform uniting
               ambitious individuals with industry experts for personalized
-              mentorship. <br /> Whether you're seeking guidance or eager to share your
-              expertise, find tailored support for your professional growth
-              journey.
+              mentorship. <br /> Whether you're seeking guidance or eager to
+              share your expertise, find tailored support for your professional
+              growth journey.
             </p>
           </div>
 
@@ -31,14 +31,14 @@ export default function Hero() {
             <div className="sm:block hidden">
               <Button
                 variant="default"
-                className=" bg-[#009379] font-syne rounded-xl hover:bg-[#199D87] hover:scale-105 hover:backdrop-blur-sm"
+                className=" bg-[#009379] font-syne rounded-xl transition-all duration-700 ease-in-out hover:bg-[#199D87] hover:scale-105 hover:backdrop-blur-sm"
               >
                 Join Our Waiting List
               </Button>
             </div>
             <Button
               variant="default"
-              className="sm:hidden bg-[#009379] font-syne rounded-xl hover:bg-[#199D87] hover:scale-105 hover:backdrop-blur-sm"
+              className="sm:hidden bg-[#009379] font-syne rounded-xl transition-all duration-700 ease-in-out hover:bg-[#199D87] hover:scale-105 hover:backdrop-blur-sm"
             >
               Join Our Waiting List
             </Button>

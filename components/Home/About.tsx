@@ -18,16 +18,21 @@ export default function About() {
             other on the 100xdevs Discord, connected by a passion for learning
             and a desire to grow both personally and professionally.
           </p>
-          <Link href="https://www.buymeacoffee.com/kabeerhadi" target="_blank" rel="noopener noreferrer" aria-label="buy me a coffee button" className="curser-pointer pt-11 space-y-2">
+          <Link
+            href="https://www.buymeacoffee.com/kabeerhadi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="buy me a coffee button"
+            className="curser-pointer pt-11 space-y-2"
+          >
             <p className="text-lg font-semibold font-syne">Support us</p>
             <Image src={buyMeaCoffe} alt="mouse" width={200} height={200} />
           </Link>
-        
         </div>
       </div>
 
       <div className="w-full flex flex-col content-center gap-4 sm:gap-8">
-        <div className="flex flex-col  gap-4 p-4 sm:p-10   backdrop-blur-sm rounded-lg hover:bg-[#E5F4F2] md:hover:shadow-md">
+        <div className="flex flex-col  gap-4 p-4 sm:p-10   backdrop-blur-sm rounded-lg transition-all duration-700 ease-in-out hover:bg-[#E5F4F2] md:hover:shadow-md">
           <p className="text-3xl font-bold font-syne">🌱</p>
           <h2 className="text-3xl font-bold font-syne">Our Roots</h2>
           <p className="font-inter mx-auto">
@@ -39,7 +44,7 @@ export default function About() {
             mentor, a "big brother," made all the difference.
           </p>
         </div>
-        <div className=" flex flex-col  gap-4 p-4 sm:p-10 backdrop-blur-sm rounded-lg hover:bg-[#E5F4F2] md:hover:shadow-md">
+        <div className=" flex flex-col  gap-4 p-4 sm:p-10 backdrop-blur-sm rounded-lg transition-all duration-700 ease-in-out hover:bg-[#E5F4F2] md:hover:shadow-md">
           <p className="text-3xl font-bold font-syne">🚀</p>
           <h2 className="text-3xl font-bold font-syne">
             The Birth of
@@ -53,7 +58,7 @@ export default function About() {
             and the aspiration to make a difference, Menteor was born.
           </p>
         </div>
-        <div className=" flex flex-col  gap-4 p-4 sm:p-10 backdrop-blur-sm rounded-lg hover:bg-[#E5F4F2] md:hover:shadow-md">
+        <div className=" flex flex-col  gap-4 p-4 sm:p-10 backdrop-blur-sm rounded-lg transition-all duration-700 ease-in-out hover:bg-[#E5F4F2] md:hover:shadow-md">
           <p className="text-3xl font-bold font-syne"> 💙</p>
           <h2 className="text-3xl font-bold font-syne">
             Our Heartfelt Mission
