@@ -1,3 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
+import buyMeaCoffe from "@/public/buyMeaCoffee.png";
+
 export default function About() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-around  relative md:mb-32 max-w-7xl mx-auto py-10 ">
@@ -14,6 +18,11 @@ export default function About() {
             other on the 100xdevs Discord, connected by a passion for learning
             and a desire to grow both personally and professionally.
           </p>
+          <Link href="https://www.buymeacoffee.com/kabeerhadi" target="_blank" rel="noopener noreferrer" aria-label="buy me a coffee button" className="curser-pointer pt-11 space-y-2">
+            <p className="text-lg font-semibold font-syne">Support us</p>
+            <Image src={buyMeaCoffe} alt="mouse" width={200} height={200} />
+          </Link>
+        
         </div>
       </div>
 
