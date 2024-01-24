@@ -1,6 +1,8 @@
 
 # Menteor: Empowering Skill-Building Through Expert Mentorship 🚀
 
+<div style="display: inline-block; margin-right: 0.25rem;"><a href="https://www.menteor.space/"><img src="https://www.menteor.space/_next/static/media/logo.0e28b26c.svg" width="150"/></a></div> 
+
 Welcome to Menteor, the transformative platform designed for personalized learning journeys beyond traditional academics. We cater to self-motivated individuals and those seeking practical skill development over theoretical knowledge.
 
 ## Project Description 🌟
@@ -12,7 +14,7 @@ Our vision is to connect seasoned industry experts passionate about mentoring wi
 - **Curated Matching:** Our carefully designed matching algorithm connects mentees with ideal mentors based on skill aspirations, learning styles, and industry interests.
 -  **Personalized Guidance:** Access tailor-made mentorship to align with your unique goals. Whether you're seeking guidance or sharing expertise, Menteor empowers personal and professional growth.
 - **Empowering Relationships:** Connect with mentors and mentees who understand your journey. Build empowering relationships within a supportive community focused on collective growth.
--**Flexible and Rewarding**  Enjoy flexible hourly sessions that fit your schedule, making mentorship accessible and rewarding. Menteor adapts to your pace, whether mentoring or seeking guidance.
+- **Flexible and Rewarding**  Enjoy flexible hourly sessions that fit your schedule, making mentorship accessible and rewarding. Menteor adapts to your pace, whether mentoring or seeking guidance.
 
 - **Flexible Engagement:** Choose from structured mentorship programs or individualized session packages based on your specific needs and budget.
 
@@ -22,7 +24,19 @@ Our vision is to connect seasoned industry experts passionate about mentoring wi
 
 Menteor is currently in its early stages, a blank canvas brimming with potential. Join us in building a platform that empowers individuals to unlock their potential and forge successful careers through personalized, expert guidance.
 
-Explore Menteor now: [www.menteor.space](https://www.menteor.space/)
+**Explore Menteor now 👇**  
+<div style="display: inline-block; margin-right: 0.25rem;"><a href="https://www.menteor.space/"><img src="https://www.menteor.space/_next/static/media/logo.0e28b26c.svg" width="150"/></a></div> 
+
+---
+
+**Support Menteor 💰** 
+<div style="display: inline-block; margin-right: 0.25rem;"><a href="https://www.buymeacoffee.com/kabeerhadi"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="150"/></a></div>
+
+---
+
+
+
+
 
 ## Getting Started 🚀
 
