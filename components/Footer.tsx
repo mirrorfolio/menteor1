@@ -19,7 +19,7 @@ export default function Footer() {
             </Link>
           </p>
         </div>
-        <div className="flex w-full gap-4 justify-center items-end sm:justify-end">
+        <div className="flex w-full gap-4 justify-center sm:justify-end">
           <Link
             target="_blank"
             rel="noopener noreferrer"
