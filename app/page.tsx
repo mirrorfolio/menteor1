@@ -1,8 +1,6 @@
-import Footer from "@/components/Footer";
 import About from "@/components/Home/About";
 import Features from "@/components/Home/Features";
 import Hero from "@/components/Home/Hero";
-import WaitingListCTA from "@/components/WaitingListCTA";
 
 export default function Home() {
   const options = [
@@ -14,9 +12,6 @@ export default function Home() {
     <Hero />
     <Features />
     <About />
-    <WaitingListCTA />
-    <Footer />
-   
   </main>
   )
 }
