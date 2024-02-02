@@ -4,27 +4,35 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import Image from "next/image";
 import React from "react";
 
 interface FeatureCardProps {
   title: string;
   description: string;
-  icon: string;
+  image: string;
+  className?: string;
 }
 export default function FeatureCard({
   title,
   description,
-  icon,
+  image,
+  className = "",
 }: FeatureCardProps) {
   return (
-    <Card className="flex flex-col gap-4 text-center bg-gradient-to-b from-[#E5F4F2] to-[#F8F9FF] transition-colors duration-700 ease-in-out hover:bg-gradient-to-t  hover:from-[#E5F4F2] hover:to-[#F8F9FF] py-8 backdrop-blur-sm rounded-lg   hover:shadow-md">
-      <CardHeader className="p-0 mb-5 text-center">
-        <p className="text-5xl">{icon}</p>
-      </CardHeader>
-      <CardTitle className="font-syne mx-auto">{title}</CardTitle>
-      <CardDescription className="px-4 font-inter">
-        {description}
-      </CardDescription>
+    <Card
+      className={`${className} flex flex-col md:flex-row  gap-4 text-center justify-center items-center bg-[#E5F4F2] py-8 backdrop-blur-sm rounded-lg `}
+    >
+      <div className="flex flex-col gap-4 justify-center items-center px-4 md:w-1/2">
+        <CardHeader className="p-0 mb-5 text-center"></CardHeader>
+        <CardTitle className="font-syne mx-auto sm:w-3/4">{title}</CardTitle>
+        <CardDescription className="px-4 font-inter">
+          {description}
+        </CardDescription>
+      </div>
+      <div>
+        <Image src={image} alt={title} width={150} height={150} />
+      </div>
     </Card>
   );
 }

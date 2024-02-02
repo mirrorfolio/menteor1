@@ -9,11 +9,12 @@ export default function Header() {
       <div className="mx-auto  max-w-7xl px-4 py-6 sm:px-6 flex justify-between lg:px-8 items-center align-middle">
         <Link href="/" className="text-2xl font-syne font-bold cursor-pointer">
           <Image
+            loading="lazy"
+            draggable={false}
             src={logo}
             alt="Menteor logo"
             width={100}
             height={100}
-            priority={true}
             className=" bg-current/90 "
           />
         </Link>
