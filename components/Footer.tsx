@@ -2,14 +2,19 @@ import Link from "next/link";
 import WaitingListCTA from "./WaitingListCTA";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { Coffee } from "lucide-react";
-
+import bmc from "@/public/bmc-logo.svg";
 export default function Footer() {
+  const isWaitingList = false;
   return (
-    <footer className="backdrop-blur-sm flex flex-col gap-4 p-5 max-w-7xl lg:flex-row min-w-full sticky  top-0 z-[999]">
-      <div className="w-full lg:max-w-sm">
-        <WaitingListCTA />
-      </div>
+    <footer
+      className="backdrop-blur-sm flex flex-col gap-4 p-5 max-w-7xl lg:flex-row min-w-full sticky  top-0 z-[999]"
+      aria-labelledby="Footer section"
+    >
+      {!isWaitingList && (
+        <div className="w-full lg:max-w-sm">
+          <WaitingListCTA />
+        </div>
+      )}
       <section className="bg-black/90 text-background flex-1 rounded-xl p-5 flex flex-col gap-4">
         <div className="flex w-full flex-col  md:flex-row md:justify-between gap-4  mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 items-center align-bottom">
           <div className="w-full md:w-2/3 grid auto-cols-auto sm:grid-cols-3 gap-4 justify-center">
@@ -82,11 +87,14 @@ export default function Footer() {
                   <p className="text-xs  font-inter block sm:hidden">
                     Support us
                   </p>
-                  <Button
-                    variant="default"
-                    className=" bg-[#009379] font-syne rounded-xl transition-all duration-700 ease-in-out hover:bg-[#199D87] hover:scale-105 hover:backdrop-blur-sm"
-                  >
-                    <Coffee className="mr-2" size={20} />
+                  <Button variant="default">
+                    <Image
+                      src={bmc}
+                      alt="Buy me a coffee"
+                      className="mr-2"
+                      height={20}
+                      width={20}
+                    />
                     Buy me a coffee
                   </Button>
                 </Link>
