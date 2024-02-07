@@ -1,12 +1,15 @@
 import heroImg from "@/public/img/heroImg.svg";
-import mouse from "@/public/icons/mouse.svg";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <>
-      <section className="w-full flex flex-col-reverse sm:flex-col justify-around items-center  gap-8 max-w-xl sm:max-w-5xl mx-auto py-2">
+      <section
+        className="w-full flex flex-col-reverse sm:flex-col justify-around items-center  gap-8 max-w-xl sm:max-w-5xl mx-auto py-2"
+        aria-labelledby="hero"
+      >
         <div className="w-full">
           <div className=" flex flex-col gap-8 p-4 sm:p-10 ">
             <div className="pt-5 flex flex-col gap-4 mx-auto">
@@ -24,12 +27,12 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex justify-center">
-            <Button
-              variant="default"
-              className=" bg-[#009379] font-syne rounded-xl transition-all duration-700 ease-in-out hover:bg-[#199D87] hover:scale-105 hover:backdrop-blur-sm"
+            <Link
+              href="/join-waiting-list"
+              aria-labelledby="Waiting list Join button"
             >
-              Join Our Waiting List
-            </Button>
+              <Button variant="default">Join Our Waiting List</Button>
+            </Link>
           </div>
         </div>
         <div className="flex justify-center  p-3 ">

@@ -1,11 +1,10 @@
-import { features } from "process";
 import FeatureCard from "../ui/featureCard";
 
 import FeatureLists from "@/store/features";
 
 export default function Features() {
   return (
-    <section className="flex flex-col gap-4 justify-around items-center  max-w-7xl mx-auto py-10 my-20">
+    <section className="flex flex-col gap-4 justify-around items-center  max-w-7xl mx-auto py-10 my-20" aria-labelledby="USP section">
       <div className="w-full">
         <div className=" flex flex-col  gap-4 p-4 sm:p-10 ">
           <h2 className="text-2xl md:text-4xl text-center font-bold font-syne">
