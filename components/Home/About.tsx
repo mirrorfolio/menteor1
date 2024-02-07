@@ -32,7 +32,7 @@ export default function About() {
             height={300}
             loading="lazy"
             style={{ objectFit: "contain" }}
-            className="border-black border-b-[1px]"
+            className="border-black border-b-[1px] "
           />
         </div>
         <div className="w-full flex flex-col gap-4 md:flex-1">
