@@ -22,9 +22,21 @@ import {
 } from "@/components/ui/select";
 import { WaitingListFormSchema as formSchema } from "@/store/formSchemas";
 import { Checkbox } from "@/components/ui/checkbox";
+import { addToWaitingList } from "@/lib/actions";
+import { useRouter } from "next/navigation";
+import { useToast } from "@/components/ui/use-toast";
 export default function JoinWaitingList() {
+  const Router = useRouter();
   const JoinWaitingListForm = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      getCallBack: false,
+      discoveredFrom: "",
+      otherDiscoveredFrom: "",
+      phoneNumber: "",
+      email: "",
+      name: "",
+    },
   });
 
   const platformWatcher: string = JoinWaitingListForm.watch("discoveredFrom");
@@ -38,9 +50,38 @@ export default function JoinWaitingList() {
     "Word of Mouth/ Refferal",
     "other",
   ];
+  const { toast } = useToast();
 
-  const WaitingListFormHandler = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+  const WaitingListFormHandler = async (data: z.infer<typeof formSchema>) => {
+    try {
+      const formData = {
+        name: data.name,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        discoveryMethod: data.discoveredFrom.toString(),
+        exceptionalDiscovery: data.otherDiscoveredFrom,
+        getCallBack: !!data.getCallBack,
+      };
+      const userData = await addToWaitingList(formData);
+      console.log(userData);
+
+      if (!userData) {
+        console.log("error");
+        return toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
+        });
+      }
+
+      return Router.push(
+        "/join-waiting-list/waiting-list-confirmed/" + userData
+      );
+    } catch (error) {
+      console.log(error);
+
+      throw error;
+    }
   };
 
   return (
@@ -61,8 +102,9 @@ export default function JoinWaitingList() {
         <div className="w-full border text-card-foreground shadow-sm flex flex-col  gap-4  bg-[#E5F4F2] py-8 backdrop-blur-sm rounded-lg">
           <div className="px-6 flex flex-col gap-4">
             <p className="text-sm md:text-md font-syne text-[#009379] font-medium text-center mt-2">
-              We deliver Menteor based on your requirements, so your voice
-              matters!
+              We deliver{" "}
+              <span className="font-medium text-primary">Menteor</span> based on
+              your requirements, so your voice matters!
             </p>
             <Form {...JoinWaitingListForm}>
               <form
@@ -152,6 +194,7 @@ export default function JoinWaitingList() {
                         <Select
                           value={field.value}
                           onValueChange={field.onChange}
+                          defaultValue="Please select one from the list"
                         >
                           <FormControl>
                             <SelectTrigger>
@@ -208,11 +251,12 @@ export default function JoinWaitingList() {
                   name="getCallBack"
                   render={({ field }) => {
                     return (
-                      <FormItem className="flex gap-4 items-center">
+                      <FormItem className="flex gap-4">
                         <FormControl>
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
+                            className="mt-4 md:mt-2.5"
                           />
                         </FormControl>
                         <FormLabel className="font-syne text-sm pb-2">

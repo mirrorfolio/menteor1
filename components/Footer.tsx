@@ -7,7 +7,7 @@ export default function Footer() {
   const isWaitingList = false;
   return (
     <footer
-      className="backdrop-blur-sm flex flex-col gap-4 p-5 max-w-7xl lg:flex-row min-w-full sticky  top-0 z-[999]"
+      className="backdrop-blur-sm flex flex-col gap-4 p-5 max-w-7xl lg:flex-row min-w-full sticky top-0 "
       aria-labelledby="Footer section"
     >
       {!isWaitingList && (
