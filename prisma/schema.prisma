@@ -6,31 +6,13 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
-
-model User {
-  id                String          @id @default(auto()) @map("_id") @db.ObjectId
-  profile           Profile
-  email             String          @unique
-  engagementType    UserRoles       @relation(fields: [role], references: [id])
-  role              String          @db.ObjectId
-  discoveryMethod   discoveryMethod @relation(fields: [discoveryPlatform], references: [id])
-  discoveryPlatform String          @db.ObjectId
+model UserInWaitingList {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String 
+  email String @unique 
+  phoneNumber String
+  discoveryMethod String
+  exceptionalDiscovery String
+  getCallBack Boolean @default(false)
 }
 
-model UserRoles {
-  id   String @id @default(auto()) @map("_id") @db.ObjectId
-  role String @unique
-  User User[]
-}
-
-model discoveryMethod {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  method String
-  User   User[]
-}
-
-type Profile {
-  name     String?
-  email    String
-  location String
-}
