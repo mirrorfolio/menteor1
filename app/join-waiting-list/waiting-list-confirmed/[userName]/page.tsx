@@ -13,7 +13,7 @@ export default function WaitingListConfirmed({
   const name = params.userName.split("%20")[0];
   useEffect(() => {
     setUserData(name);
-  }, [params.userName]);
+  }, []);
 
   return (
     <>
