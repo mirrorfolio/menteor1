@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/select";
 import { WaitingListFormSchema as formSchema } from "@/store/formSchemas";
 import { Checkbox } from "@/components/ui/checkbox";
-import { addToWaitingList } from "@/lib/actions";
+import { addToWaitingList } from "@/app/actions";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 export default function JoinWaitingList() {
