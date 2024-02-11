@@ -1,6 +1,7 @@
 
 "use server";
 import { PrismaClient } from "@prisma/client";
+import { revalidatePath } from "next/cache";
 const prisma = new PrismaClient();
 
 interface FormDataFields {
@@ -26,7 +27,7 @@ export  async function addToWaitingList(formData: FormDataFields) {
         getCallBack: formData.getCallBack,
       },
     });
-
+    revalidatePath("/join-waiting-list/waiting-list-confirmed/" + createdUser.id);
     return createdUser.name;
   } catch (error) {
     console.log(error);
