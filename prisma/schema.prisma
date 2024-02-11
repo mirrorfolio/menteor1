@@ -4,12 +4,12 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url      = "mongodb+srv://ahdkabeerpi:mD2BF24QYb6b6hEn@menteor.jbkllcd.mongodb.net/UserSurvey?retryWrites=true&w=majority"
+  url      = env("DATABASE_URL")
 }
 model UserInWaitingList {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   name String 
-  email String @unique 
+  email String  
   phoneNumber String
   discoveryMethod String
   exceptionalDiscovery String

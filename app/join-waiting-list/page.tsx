@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/select";
 import { WaitingListFormSchema as formSchema } from "@/store/formSchemas";
 import { Checkbox } from "@/components/ui/checkbox";
-import { addToWaitingList } from "@/lib/actions";
+import { addToWaitingList } from "../actions";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 export default function JoinWaitingList() {
@@ -63,7 +63,6 @@ export default function JoinWaitingList() {
         getCallBack: !!data.getCallBack,
       };
       const userData = await addToWaitingList(formData);
-      console.log(userData);
 
       if (!userData) {
         console.log("error");
