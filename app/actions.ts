@@ -28,6 +28,7 @@ export  async function addToWaitingList(formData: FormDataFields) {
       },
     });
     revalidatePath("/join-waiting-list/waiting-list-confirmed/" + createdUser.id);
+    
     return createdUser.name;
   } catch (error) {
     console.log(error);
