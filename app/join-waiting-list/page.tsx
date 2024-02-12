@@ -22,9 +22,9 @@ import {
 } from "@/components/ui/select";
 import { WaitingListFormSchema as formSchema } from "@/store/formSchemas";
 import { Checkbox } from "@/components/ui/checkbox";
-import { addToWaitingList } from "@/app/actions";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
+import axios from "axios";
 export default function JoinWaitingList() {
   const Router = useRouter();
   const JoinWaitingListForm = useForm<z.infer<typeof formSchema>>({
@@ -62,8 +62,13 @@ export default function JoinWaitingList() {
         exceptionalDiscovery: data.otherDiscoveredFrom,
         getCallBack: !!data.getCallBack,
       };
-      const userData = await addToWaitingList(formData);
-      console.log(userData);
+
+      const response = await axios.post(
+        "https://menteor.menteor-space.workers.dev/addToWaitingList",
+        { formData }
+      );
+
+      const userData = response.data.name;
 
       if (!userData) {
         console.log("error");
