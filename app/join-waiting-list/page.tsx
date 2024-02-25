@@ -183,7 +183,7 @@ export default function JoinWaitingList() {
                     );
                   }}
                 />
-
+                {/* issue 13-add-select-input-with-a-search-box */}
                 <FormLabel className="font-syne text-sm">
                   How you came to know about Menteor?
                 </FormLabel>
