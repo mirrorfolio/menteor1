@@ -86,6 +86,7 @@ export default function JoinWaitingList() {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
   const [otherValue, setOtherValue] = React.useState("")
+  const [search, setSearch] = React.useState("");
   return (
 
     <section className="w-full flex flex-col justify-around items-center  gap-8 max-w-xl sm:max-w-5xl mx-auto py-2 mb-20">
@@ -182,54 +183,84 @@ export default function JoinWaitingList() {
                     );
                   }}
                 />
-                <div style={{ position: 'sticky', top: '0' }}>
-                  <FormLabel className="font-syne text-sm">
-                    How you came to know about Menteor?
-                  </FormLabel>
-                  <Popover open={open} onOpenChange={setOpen}>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        role="combobox"
-                        aria-expanded={open}
-                        className="w-[950px] justify-between"
-                      >
-                        {value ? value : "Please select one from the list"}
-                        <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-30" />
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-[950px] p-0 text-left" >
-                      <Command>
-                        <CommandInput placeholder="Search platform..." className="h-9" />
-                        <CommandEmpty>Other</CommandEmpty>
-                        <CommandGroup>
-                          {platformList.map((platform) => (
-                            <CommandItem
-                              key={platform}
-                              value={platform}
-                              onSelect={(currentValue) => {
-                                if (currentValue === "other") {
-                                  setOtherValue(""); // Reset other value when selecting "other"
-                                }
-                                setValue(currentValue);
-                                setOpen(true);
-                              }}
-                            >
-                              {platform}
-                              <CheckIcon
-                                className={cn(
-                                  "ml-auto h-4 w-4",
-                                  value === platform ? "opacity-100" : "opacity-0"
-                                )}
-                              />
-                            </CommandItem>
-                          ))}
-                        </CommandGroup>
-                      </Command>
-                    </PopoverContent>
-                  </Popover>
-                </div>
 
+                <FormLabel className="font-syne text-sm">
+                  How you came to know about Menteor?
+                </FormLabel>
+                <Popover open={open} onOpenChange={setOpen}>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      role="combobox"
+                      aria-expanded={open}
+                      className="w-full md:w-[950px] justify-between hover:bg-light" // Adjust this
+                    >
+                      <span className="font-normal">
+                        {value ? value : "Please select one from the list"}
+                      </span>
+
+                      <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-30" />
+                    </Button>
+
+                  </PopoverTrigger>
+                  <PopoverContent className="w-full md:w-[950px] p-0 text-left">
+
+                    <Command>
+
+                      <CommandInput
+                        placeholder="Search platform..."
+                        className="font-inter"
+                      />
+                      <CommandGroup
+                        className="max-h-[300px] overflow-y-auto overflow-x-hidden cursor-default select-none text-sm outline-none focus:bg-[#E5F4F2] focus:ring-1  focus:ring-[#009379] focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+                      >
+                        {platformList.map((platform) => (
+                          <CommandItem
+                            key={platform}
+                            value={platform}
+                            className="hover:ring-1 hover:ring-[#009379]"
+                            onSelect={(currentValue) => {
+                              if (currentValue === "other") {
+                                setOtherValue("");
+                              }
+                              setValue(currentValue);
+                              setOpen(false);
+                            }}
+                          >
+                            {platform}
+                            <CheckIcon
+                              className={cn(
+                                "font-inter text-xs text-red-500",
+                                value === platform ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                          </CommandItem>
+                        ))}
+                        {search && platformList.every(platform => !platform.includes(search)) && (
+                          <CommandItem
+                            key="other"
+                            value="other"
+                            className="hover:ring-1 hover:ring-[#009379]"
+                            onSelect={(currentValue) => {
+                              setOtherValue(""); // Reset other value when selecting "other"
+                              setValue(currentValue);
+                              setOpen(false);
+                            }}
+                          >
+                            Other
+                            <CheckIcon
+                              className={cn(
+                                "font-inter text-xs text-red-500",
+                                value === "other" ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                          </CommandItem>
+                        )}
+                      </CommandGroup>
+                    </Command>
+                  </PopoverContent>
+
+                </Popover>
                 {/* The added input field for "other" option when user pressother*/}
                 {value === "other" && (
                   <FormField
