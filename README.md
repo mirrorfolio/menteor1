@@ -1,113 +1,37 @@
 
-# Menteor: Empowering Skill-Building Through Expert Mentorship 🚀
+# Menteor: Empowering Self-Directed Learning Through Personalized Mentorship 🌟
 
-<div style="display: inline-block; margin-right: 0.25rem;"><a href="https://www.menteor.space/"><img src="https://www.menteor.space/_next/static/media/logo.0e28b26c.svg" width="150"/></a></div> 
+Welcome to Menteor, a self-directed learning platform currently under development. Menteor aims to address the challenges faced by independent learners by directly connecting them with industry professionals and experts for personalized mentorship. This project is inspired by personal experiences and a desire to tackle a common pain point in the learning journey.
 
-Welcome to Menteor, the transformative platform designed for personalized learning journeys beyond traditional academics. We cater to self-motivated individuals and those seeking practical skill development over theoretical knowledge.
+## Project Overview 🚀
 
-## Project Description 🌟
+Menteor prioritizes a collaborative and community-driven approach, emphasizing user needs throughout the development process. With a waitlist already exceeding 100 users, the platform has garnered significant interest. We are on track to enter the development phase very soon.
 
-Our vision is to connect seasoned industry experts passionate about mentoring with driven mentees eager to acquire specific skills and navigate professional growth. Through one-on-one mentorship, we foster meaningful connections and facilitate effective knowledge transfer, empowering mentees to achieve their full potential.
+## Key Features and Benefits ✨
 
-### Key Elements of the Menteor Experience ✨
+- **Direct Mentorship:** Connect directly with industry professionals and experts for personalized mentorship tailored to your learning goals.
 
-- **Curated Matching:** Our carefully designed matching algorithm connects mentees with ideal mentors based on skill aspirations, learning styles, and industry interests.
--  **Personalized Guidance:** Access tailor-made mentorship to align with your unique goals. Whether you're seeking guidance or sharing expertise, Menteor empowers personal and professional growth.
-- **Empowering Relationships:** Connect with mentors and mentees who understand your journey. Build empowering relationships within a supportive community focused on collective growth.
-- **Flexible and Rewarding**  Enjoy flexible hourly sessions that fit your schedule, making mentorship accessible and rewarding. Menteor adapts to your pace, whether mentoring or seeking guidance.
+- **Community-Driven Approach:** Menteor emphasizes community feedback and collaboration to ensure the platform meets the dynamic needs of its users.
 
-- **Flexible Engagement:** Choose from structured mentorship programs or individualized session packages based on your specific needs and budget.
+- **Personalized Learning:** Receive tailored guidance and support to navigate your learning journey effectively.
 
-- **Direct Compensation:** Mentees compensate mentors directly for their valuable time and expertise, ensuring a mutually beneficial relationship.
+- **Accessible and Flexible:** Enjoy flexible mentorship sessions that fit your schedule, making learning accessible and rewarding.
 
-- **Community-Driven Evolution:** We prioritize continuous improvement by actively incorporating feedback from both mentors and mentees into the platform's development. We believe in creating a user-centric experience that evolves to meet the dynamic needs of our community.
+## Get Involved 🌐
 
-Menteor is currently in its early stages, a blank canvas brimming with potential. Join us in building a platform that empowers individuals to unlock their potential and forge successful careers through personalized, expert guidance.
-
-**Explore Menteor now 👇**  
-<div style="display: inline-block; margin-right: 0.25rem;"><a href="https://www.menteor.space/"><img src="https://www.menteor.space/_next/static/media/logo.0e28b26c.svg" width="150"/></a></div> 
+We invite you to join us on this journey to revolutionize self-directed learning. Stay tuned for updates as we progress towards the development phase.
 
 ---
 
-**Support Menteor 💰** 
-<div style="display: inline-block; margin-right: 0.25rem;"><a href="https://www.buymeacoffee.com/kabeerhadi"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="150"/></a></div>
+**Explore Menteor now:** [Visit Menteor](https://www.menteor.space/)
+
+**Support Menteor:** [Buy Me a Coffee](https://www.buymeacoffee.com/kabeerhadi)
 
 ---
 
+## Feedback and Contributions 🛠️
 
+We welcome feedback and contributions from the community to enhance the Menteor platform. Get involved by forking the repository, making your desired changes, and opening a pull request to propose your contributions.
 
+Let's work together to empower learners worldwide through personalized mentorship! 💡
 
-
-## Getting Started 🚀
-
-To kickstart your Menteor journey, follow these simple steps:
-
-```bash
-npm run dev
-
-# or
-
-yarn dev
-
-# or
-
-pnpm dev
-
-# or
-
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More ℹ️
-
-To learn more about Next.js, check out the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - An interactive Next.js tutorial.
-
-You can also explore the [Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are always welcome!
-
-## Contribute to Menteor 🛠️
-
-We welcome contributions from the community to enhance the Menteor platform. Here's how you can get involved:
-
-1. **Fork the Repository:** Click on the "Fork" button to create your own copy of the repository.
-
-2. **Clone the Repository:** Clone the forked repository to your local machine using the following command:
-    ```bash
-    git clone https://github.com/your-username/menteor.git
-    ```
-
-3. **Create a Branch:** Create a new branch for your changes to keep your development isolated. Use one of the following prefixes for your branch:
-    - `feature/` for new features
-    - `bug/` for bug fixes
-    - `enhancement/` for enhancements
-
-    Example:
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
-
-4. **Make Changes:** Make your desired changes and improvements to the codebase.
-
-5. **Commit Changes:** Commit your changes with a meaningful commit message:
-    ```bash
-    git commit -m "Add your meaningful message here"
-    ```
-
-6. **Push Changes:** Push your changes to your forked repository:
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-
-7. **Create a Pull Request:** Open a pull request on the [Menteor repository](https://github.com/menteor/menteor) to propose your changes. Be sure to provide a detailed description of your contributions.
-
-8. **Feedback and Collaboration:** Participate in discussions, address feedback, and collaborate with the community to refine your contributions.
-
-Let's work together to shape the future of skill-building mentorship! 🌐💡
