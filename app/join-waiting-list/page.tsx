@@ -10,16 +10,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
+
 } from "@/components/ui/form";
+import React, { useState } from 'react';
+import { cn } from "@/lib/utils";
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { WaitingListFormSchema as formSchema } from "@/store/formSchemas";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
@@ -88,8 +88,12 @@ export default function JoinWaitingList() {
       throw error;
     }
   };
-
+  const [open, setOpen] = React.useState(false)
+  const [value, setValue] = React.useState("")
+  const [otherValue, setOtherValue] = React.useState("")
+  const [search, setSearch] = React.useState("");
   return (
+
     <section className="w-full flex flex-col justify-around items-center  gap-8 max-w-xl sm:max-w-5xl mx-auto py-2 mb-20">
       <section className="w-full px-5" aria-labelledby="Waiting list Hero">
         <h1 className="text-2xl md:text-4xl mb-4 font-bold font-syne text-center">
@@ -184,70 +188,105 @@ export default function JoinWaitingList() {
                     );
                   }}
                 />
-                {/* here we should use ComboBox from shadCn example,
-                 but it need to be refactored to use as a common UI component
-                  like other form components, due to time constraints we are going with select */}
-                <FormField
-                  control={JoinWaitingListForm.control}
-                  name="discoveredFrom"
-                  render={({ field }) => {
-                    return (
-                      <FormItem className="text-left">
-                        <FormLabel className="font-syne text-sm">
-                          How you came to know about Menteor?
-                        </FormLabel>
-                        <Select
-                          value={field.value}
-                          onValueChange={field.onChange}
-                          defaultValue="Please select one from the list"
-                        >
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue
-                                placeholder="Please select one from the list"
-                                className="font-inter "
-                              />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent className="bg-[#f1f1ff]">
-                            {platformList.map((platform) => (
-                              <SelectItem
-                                key={platform}
-                                value={platform}
-                                className="font-inter "
-                              >
-                                {platform}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                        <FormMessage className="font-inter text-xs text-red-500 " />
-                      </FormItem>
-                    );
-                  }}
-                />
-                {platformWatcher === "other" && (
+                {/* issue 13-add-select-input-with-a-search-box */}
+                <FormLabel className="font-syne text-sm">
+                  How you came to know about Menteor?
+                </FormLabel>
+                <Popover open={open} onOpenChange={setOpen}>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      role="combobox"
+                      aria-expanded={open}
+                      className="w-full md:w-[950px] justify-between hover:bg-light" // Adjust this
+                    >
+                      <span className="font-normal">
+                        {value ? value : "Please select one from the list"}
+                      </span>
+
+                      <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-30" />
+                    </Button>
+
+                  </PopoverTrigger>
+                  <PopoverContent className="w-full md:w-[950px] p-0 text-left">
+
+                    <Command>
+
+                      <CommandInput
+                        placeholder="Search platform..."
+                        className="font-inter"
+                      />
+                      <CommandGroup
+                        className="max-h-[300px] overflow-y-auto overflow-x-hidden cursor-default select-none text-sm outline-none focus:bg-[#E5F4F2] focus:ring-1  focus:ring-[#009379] focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+                      >
+                        {platformList.map((platform) => (
+                          <CommandItem
+                            key={platform}
+                            value={platform}
+                            className="hover:ring-1 hover:ring-[#009379]"
+                            onSelect={(currentValue) => {
+                              if (currentValue === "other") {
+                                setOtherValue("");
+                              }
+                              setValue(currentValue);
+                              setOpen(false);
+                            }}
+                          >
+                            {platform}
+                            <CheckIcon
+                              className={cn(
+                                "font-inter text-xs text-red-500",
+                                value === platform ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                          </CommandItem>
+                        ))}
+                        {search && platformList.every(platform => !platform.includes(search)) && (
+                          <CommandItem
+                            key="other"
+                            value="other"
+                            className="hover:ring-1 hover:ring-[#009379]"
+                            onSelect={(currentValue) => {
+                              setOtherValue(""); // Reset other value when selecting "other"
+                              setValue(currentValue);
+                              setOpen(false);
+                            }}
+                          >
+                            Other
+                            <CheckIcon
+                              className={cn(
+                                "font-inter text-xs text-red-500",
+                                value === "other" ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                          </CommandItem>
+                        )}
+                      </CommandGroup>
+                    </Command>
+                  </PopoverContent>
+
+                </Popover>
+                {/* The added input field for "other" option when user pressother*/}
+                {value === "other" && (
                   <FormField
                     control={JoinWaitingListForm.control}
                     name="otherDiscoveredFrom"
-                    render={({ field }) => {
-                      return (
-                        <FormItem className="text-left">
-                          <FormLabel className="font-syne text-sm">
-                            Please specify
-                          </FormLabel>
-                          <FormControl>
-                            <Input
-                              type="text"
-                              {...field}
-                              placeholder="Ex. Hashnode, Medium, etc."
-                              className="font-inter "
-                            />
-                          </FormControl>
-                          <FormMessage className="font-inter text-xs text-red-500 " />
-                        </FormItem>
-                      );
-                    }}
+                    render={({ field }) => (
+                      <FormItem className="text-left">
+                        <FormLabel className="font-syne text-sm">
+                          Please specify
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            type="text"
+                            {...field}
+                            placeholder="Ex. Hashnode, Medium, etc."
+                            className="font-inter"
+                          />
+                        </FormControl>
+                        <FormMessage className="font-inter text-xs text-red-500" />
+                      </FormItem>
+                    )}
                   />
                 )}
                 {/* end of ComboBox */}
