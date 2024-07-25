@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Audio, TailSpin  } from 'react-loader-spinner'
 import {
   Form,
   FormControl,
@@ -25,7 +26,20 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import axios from "axios";
+import { useState } from "react";
+
+interface AudioLoaderProps {
+  height: number;
+  width: number;
+  
+  color: string;
+  ariaLabel: string;
+  wrapperStyle?: React.CSSProperties;
+  wrapperClass?: string;
+}
+
 export default function JoinWaitingList() {
+  const [loading, setLoading] = useState(false);
   const Router = useRouter();
   const JoinWaitingListForm = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -54,6 +68,7 @@ export default function JoinWaitingList() {
 
   const WaitingListFormHandler = async (data: z.infer<typeof formSchema>) => {
     try {
+      setLoading(true);
       const formData = {
         name: data.name,
         email: data.email,
@@ -78,7 +93,7 @@ export default function JoinWaitingList() {
           description: "There was a problem with your request.",
         });
       }
-
+      setLoading(false);
       return Router.push(
         "/join-waiting-list/waiting-list-confirmed/" + userData
       );
@@ -89,6 +104,35 @@ export default function JoinWaitingList() {
     }
   };
 
+  const AudioLoader: React.FC<AudioLoaderProps> = ({
+    height,
+    width,
+    color,
+    ariaLabel,
+  
+  }) => {
+    return (
+      <div className="flex justify-center item-center my-8">
+           <TailSpin
+              height={height}
+              width={width}
+              color={color}
+              ariaLabel={ariaLabel}
+           />
+      </div>
+    );
+  };
+
+  if (loading) {
+    return (
+      <AudioLoader
+          height={100}
+          width={100}
+          color="#057A55"
+          ariaLabel="loading"
+      />
+    )
+  }
   return (
     <section className="w-full flex flex-col justify-around items-center  gap-8 max-w-xl sm:max-w-5xl mx-auto py-2 mb-20">
       <section className="w-full px-5" aria-labelledby="Waiting list Hero">
