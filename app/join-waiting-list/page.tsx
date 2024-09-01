@@ -25,7 +25,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import axios from "axios";
+import { useState } from "react";
+import LoadingSpinner from "@/components/LoadingSpinner";
 export default function JoinWaitingList() {
+  const [isLoading, setIsLoading] = useState(false);
   const Router = useRouter();
   const JoinWaitingListForm = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -54,6 +57,7 @@ export default function JoinWaitingList() {
 
   const WaitingListFormHandler = async (data: z.infer<typeof formSchema>) => {
     try {
+      setIsLoading(true);
       const formData = {
         name: data.name,
         email: data.email,
@@ -72,6 +76,7 @@ export default function JoinWaitingList() {
 
       if (!userData) {
         console.log("error");
+        setIsLoading(false);
         return toast({
           variant: "destructive",
           title: "Uh oh! Something went wrong.",
@@ -84,10 +89,13 @@ export default function JoinWaitingList() {
       );
     } catch (error) {
       console.log(error);
-
+      setIsLoading(false);
       throw error;
     }
   };
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <section className="w-full flex flex-col justify-around items-center  gap-8 max-w-xl sm:max-w-5xl mx-auto py-2 mb-20">
