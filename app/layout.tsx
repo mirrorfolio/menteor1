@@ -40,6 +40,7 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
+        <script src='https://www.noupe.com/embed/019a7255aa8e741495ca9995c2a18f60e60e.js'></script>
       </body>
     </html>
   );
